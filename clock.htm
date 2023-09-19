@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOCK</title>
+    <link href="clock.css" rel="StyleSheet">
+</head>
+
+<body>
+    <h1>SETU</h1>
+    <div class="clock">
+        <p>S R 17 </p>
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+        </div>
+        <div class="sec">
+            <div class="sc" id="sc"></div>
+        </div>
+     </div>
+
+     <script type="text/javascript">
+       const hr = document.querySelector('#hr') ;
+       const mn = document.querySelector('#mn') ;
+       const sc = document.querySelector('#sc') ;
+
+       setInterval(() => {
+       let day = new Date();
+       let hh = day.getHours();
+       let mm = day.getMinutes();
+       let ss = day.getSeconds();
+
+       hr.style.transform = `rotate(${(30*hh+mm/2)}deg)`;
+       mn.style.transform = `rotate(${6*mm}deg)`;
+       sc.style.transform = `rotate(${6*ss}deg)`;
+           
+       },1000);
+    </script>
+</body>
+
+</html>
